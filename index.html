@@ -69,7 +69,6 @@ h2 { color: #6E5A20; }
     display: flex;
     justify-content: space-between;
     margin-bottom: 8px;
-    color: var(--ink);
 }
 
 input[type="range"] {
@@ -230,7 +229,6 @@ button:hover {
     font-size: 12px;
 }
 
-/* Tabs */
 .tabs {
     display: flex;
     gap: 8px;
@@ -267,455 +265,118 @@ button:hover {
 .tab-panel { display: none; }
 .tab-panel.active { display: block; }
 
-/* Story screens */
-.story-header {
+.acquisition-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
     margin-bottom: 18px;
 }
 
-.story-kicker {
-    color: var(--pink-dark);
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    display: none;
-}
-
-.story-title {
-    margin: 4px 0 8px;
-    font-size: 28px;
-}
-
-.story-copy {
-    color: var(--muted);
-    line-height: 1.65;
-    margin: 0;
-}
-
-.flow-row {
-    display: grid;
-    grid-template-columns: repeat(7,1fr);
-    gap: 8px;
-    align-items: center;
-    margin: 24px 0;
-}
-
-.flow-step {
-    background: var(--yellow-pale);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 16px 10px;
-    text-align: center;
-    font-weight: 600;
-}
-
-.flow-arrow {
-    text-align: center;
-    color: var(--pink-dark);
-    font-size: 22px;
-}
-
-.trust-box {
-    background: linear-gradient(135deg,var(--pink-pale),var(--yellow-pale));
-    border: 1px solid var(--pink);
-    border-radius: 16px;
-    padding: 22px;
-    margin-top: 18px;
-}
-
-.metric-grid {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 12px;
-    margin: 18px 0;
-}
-
-.metric-card {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 16px;
-}
-
-.metric-card strong {
-    display: block;
-    font-size: 24px;
-    margin-top: 5px;
-}
-
-.assumption {
-    background: var(--yellow-pale);
-    border-left: 4px solid var(--yellow);
-    padding: 12px 14px;
-    color: var(--muted);
-    font-size: 12px;
-    line-height: 1.6;
-    margin-top: 16px;
-    border-radius: 8px;
-}
-
-/* Trust gauge */
-.trust-gauge-wrap {
-    display: flex;
-    justify-content: center;
-    margin: 4px auto 14px;
-}
-
-.trust-gauge {
-    position: relative;
-    width: min(520px,100%);
-    height: 285px;
-}
-
-.trust-gauge canvas {
-    width: 100%;
-    height: 100%;
-    background: transparent;
-}
-
-.trust-gauge-center {
-    position: absolute;
-    left: 50%;
-    bottom: 12px;
-    transform: translateX(-50%);
-    text-align: center;
-    pointer-events: none;
-}
-
-.trust-gauge-score {
-    font-size: 46px;
-    font-weight: 700;
-    line-height: 1;
-}
-
-.trust-gauge-label {
-    font-size: 12px;
-    color: var(--muted);
-    margin-top: 4px;
-}
-
-.trust-controls {
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.trust-control {
-    background: rgba(255,255,255,.78);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 12px;
-}
-
-.trust-control label {
-    display: flex;
-    justify-content: space-between;
-    font-size: 12px;
-    font-weight: 600;
-    margin-bottom: 7px;
-}
-
-.trust-control input {
-    width: 100%;
-}
-
-.trust-results {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin-top: 14px;
-}
-
-.trust-result {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 14px;
-}
-
-.trust-result-value {
-    font-size: 25px;
-    font-weight: 700;
-    margin-top: 4px;
-}
-
-.trust-status {
-    font-size: 12px;
-    font-weight: 600;
-    margin-top: 3px;
-}
-
-.trust-status.low { color:#C94F4F; }
-.trust-status.mid { color:#B28718; }
-.trust-status.high { color:#4D8B5B; }
-
-/* Referral */
-.mini-bars {
-    display: grid;
-    gap: 9px;
-    margin-top: 18px;
-}
-
-.mini-bar-row {
-    display: grid;
-    grid-template-columns: 110px 1fr 70px;
-    align-items: center;
-    gap: 9px;
-    font-size: 11px;
-}
-
-.mini-bar-track {
-    height: 9px;
-    background: var(--yellow-pale);
-    border-radius: 99px;
-    overflow: hidden;
-}
-
-.mini-bar-fill {
-    height: 100%;
-    border-radius: 99px;
-}
-
-/* Acquisition mix */
-.acq-controls {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 12px;
-    margin: 16px 0;
-}
-
-.acq-control {
+.acquisition-card {
     background: var(--pink-pale);
     border: 1px solid var(--pink);
     border-radius: 12px;
-    padding: 13px;
+    padding: 14px 16px;
 }
 
-.acq-control label {
-    display: flex;
-    justify-content: space-between;
-    font-size: 12px;
-    font-weight: 600;
-    margin-bottom: 8px;
+.acquisition-card .card-title { color: var(--pink-dark); }
+.acquisition-card .card-value { color: #5A4850; }
+
+.acq-organic::before { background: #E7C85A; }
+.acq-referral::before { background: #E9B8C8; }
+.acq-paid::before { background: #C9899F; }
+
+.story-header{margin-bottom:18px}
+.story-kicker{display:none}
+.story-title{margin:4px 0 8px;font-size:28px}
+.story-copy{color:var(--muted);line-height:1.65;margin:0}
+.flow-row{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;align-items:center;margin:24px 0}
+.flow-step{background:var(--yellow-pale);border:1px solid var(--border);border-radius:14px;padding:16px 10px;text-align:center;font-weight:600}
+.flow-arrow{text-align:center;color:var(--pink-dark);font-size:22px}
+.trust-box{background:linear-gradient(135deg,var(--pink-pale),var(--yellow-pale));border:1px solid var(--pink);border-radius:16px;padding:22px;margin-top:18px}
+.trust-number{font-size:42px;font-weight:700;color:var(--pink-dark)}
+.trust-arrow{color:var(--muted);padding:0 8px}
+.metric-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+.metric-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:16px}
+.metric-card strong{display:block;font-size:24px;margin-top:5px}
+.loop{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px;padding:28px 12px;background:var(--pink-pale);border:1px solid var(--pink);border-radius:18px}
+.loop-node{background:var(--white);border:2px solid var(--pink);border-radius:999px;padding:13px 18px;font-weight:600}
+.loop-arrow{color:var(--yellow-dark);font-size:24px}
+.flywheel{text-align:center;font-size:22px;font-weight:700;color:#6E5A20;margin-top:20px}
+.pie-wrap{display:flex;gap:28px;align-items:center;justify-content:center;flex-wrap:wrap}
+#mixPieChart{width:360px;height:360px;max-width:100%;background:var(--yellow-pale);border-radius:50%}
+.source-legend{display:grid;gap:10px;min-width:210px}
+.source-legend div{display:flex;align-items:center;gap:9px}
+.source-dot{width:12px;height:12px;border-radius:50%;display:inline-block}
+.assumption{background:var(--yellow-pale);border-left:4px solid var(--yellow);padding:12px 14px;color:var(--muted);font-size:12px;line-height:1.6;margin-top:16px;border-radius:8px}
+.trust-gauge-wrap{display:flex;justify-content:center;margin:4px auto 14px}
+.trust-gauge{position:relative;width:min(520px,100%);height:285px}
+.trust-gauge canvas{width:100%;height:100%;background:transparent}
+.trust-gauge-center{position:absolute;left:50%;bottom:12px;transform:translateX(-50%);text-align:center;pointer-events:none}
+.trust-gauge-score{font-size:46px;font-weight:700;line-height:1}
+.trust-gauge-label{font-size:12px;color:var(--muted);margin-top:4px}
+.trust-controls{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:10px}
+.trust-control{background:rgba(255,255,255,.78);border:1px solid var(--border);border-radius:12px;padding:12px}
+.trust-control label{display:flex;justify-content:space-between;font-size:12px;font-weight:600;margin-bottom:7px}
+.trust-control input{width:100%}
+.trust-results{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.trust-result{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:14px}
+.trust-result-value{font-size:25px;font-weight:700;margin-top:4px}
+.trust-status{font-size:12px;font-weight:600;margin-top:3px}
+.trust-status.low{color:#C94F4F}
+.trust-status.mid{color:#B28718}
+.trust-status.high{color:#4D8B5B}
+.mini-bars{display:grid;gap:9px;margin-top:18px}
+.mini-bar-row{display:grid;grid-template-columns:110px 1fr 52px;align-items:center;gap:9px;font-size:11px}
+.mini-bar-track{height:9px;background:var(--yellow-pale);border-radius:99px;overflow:hidden}
+.mini-bar-fill{height:100%;border-radius:99px}
+.acq-controls{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}
+.acq-control{background:var(--pink-pale);border:1px solid var(--pink);border-radius:12px;padding:13px}
+.acq-control label{display:flex;justify-content:space-between;font-size:12px;font-weight:600;margin-bottom:8px}
+.acq-control input{width:100%}
+.funnel{display:grid;justify-items:center;gap:4px;margin:22px auto;max-width:720px}
+.funnel-stage{height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;border:1px solid var(--border);font-weight:600;clip-path:polygon(7% 0,93% 0,100% 100%,0 100%)}
+.funnel-stage span:last-child{font-size:18px}
+.funnel-stage:nth-child(1){width:100%;background:var(--yellow-pale)}
+.funnel-stage:nth-child(2){width:86%;background:#FFF7DD}
+.funnel-stage:nth-child(3){width:72%;background:var(--pink-pale)}
+.funnel-stage:nth-child(4){width:58%;background:#F8DDE7}
+.funnel-stage:nth-child(5){width:44%;background:#F0CBD8}
+.funnel-stage:nth-child(6){width:30%;background:var(--pink);color:#4A3B42}
+.conversion-pill{display:inline-flex;gap:7px;align-items:center;background:var(--yellow-pale);border:1px solid var(--border);border-radius:999px;padding:8px 13px;font-size:12px;color:var(--muted)}
+.money-flow{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;align-items:stretch;margin:20px 0}
+.money-node{position:relative;background:var(--white);border:1px solid var(--border);border-radius:14px;padding:18px 12px;text-align:center;box-shadow:0 5px 14px rgba(201,137,159,.08)}
+.money-node:not(:last-child)::after{content:'→';position:absolute;right:-16px;top:50%;transform:translateY(-50%);color:var(--pink-dark);font-size:20px;font-weight:700;z-index:2}
+.money-node .node-icon{font-size:24px}
+.money-node strong{display:block;margin-top:7px;font-size:15px}
+.money-node small{display:block;color:var(--muted);margin-top:4px;font-size:11px}
+
+@media(max-width:700px){
+    .flow-row{grid-template-columns:1fr}
+    .flow-arrow{transform:rotate(90deg)}
+    .metric-grid{grid-template-columns:1fr}
+    .trust-controls,.acq-controls{grid-template-columns:1fr 1fr}
+    .money-flow{grid-template-columns:1fr}
+    .money-node:not(:last-child)::after{content:'↓';right:50%;top:auto;bottom:-19px;transform:translateX(50%)}
 }
 
-.acq-control input {
-    width: 100%;
+@media(max-width:480px){
+    .trust-controls,.acq-controls,.trust-results{grid-template-columns:1fr}
 }
 
-.pie-wrap {
-    display: flex;
-    gap: 28px;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+@media(max-width:550px){
+    .acquisition-summary{grid-template-columns:1fr}
 }
 
-#mixPieChart {
-    width: 360px;
-    height: 360px;
-    max-width: 100%;
-    background: var(--yellow-pale);
-    border-radius: 50%;
+@media(max-width:900px){
+    .dashboard{grid-template-columns:1fr}
+    .cards{grid-template-columns:repeat(2,1fr)}
 }
 
-.source-legend {
-    display: grid;
-    gap: 10px;
-    min-width: 210px;
-}
-
-.source-legend div {
-    display: flex;
-    align-items: center;
-    gap: 9px;
-}
-
-.source-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    display: inline-block;
-}
-
-.mix-total {
-    font-size: 12px;
-    color: var(--muted);
-    text-align: center;
-    margin-top: 8px;
-}
-
-/* Growth funnel */
-.funnel {
-    display: grid;
-    justify-items: center;
-    gap: 4px;
-    margin: 22px auto;
-    max-width: 720px;
-}
-
-.funnel-stage {
-    height: 58px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 22px;
-    border: 1px solid var(--border);
-    font-weight: 600;
-    clip-path: polygon(7% 0,93% 0,100% 100%,0 100%);
-}
-
-.funnel-stage span:last-child {
-    font-size: 18px;
-}
-
-.funnel-stage:nth-child(1) {
-    width: 100%;
-    background: var(--yellow-pale);
-}
-
-.funnel-stage:nth-child(2) {
-    width: 86%;
-    background: #FFF7DD;
-}
-
-.funnel-stage:nth-child(3) {
-    width: 72%;
-    background: var(--pink-pale);
-}
-
-.funnel-stage:nth-child(4) {
-    width: 58%;
-    background: #F8DDE7;
-}
-
-.funnel-stage:nth-child(5) {
-    width: 44%;
-    background: #F0CBD8;
-}
-
-.funnel-stage:nth-child(6) {
-    width: 30%;
-    background: var(--pink);
-    color: #4A3B42;
-}
-
-.conversion-pill {
-    display: inline-flex;
-    gap: 7px;
-    align-items: center;
-    background: var(--yellow-pale);
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    padding: 8px 13px;
-    font-size: 12px;
-    color: var(--muted);
-}
-
-/* Monetisation */
-.money-flow {
-    display: grid;
-    grid-template-columns: repeat(5,1fr);
-    gap: 8px;
-    align-items: stretch;
-    margin: 20px 0;
-}
-
-.money-node {
-    position: relative;
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 18px 12px;
-    text-align: center;
-    box-shadow: 0 5px 14px rgba(201,137,159,.08);
-}
-
-.money-node:not(:last-child)::after {
-    content:'→';
-    position:absolute;
-    right:-16px;
-    top:50%;
-    transform:translateY(-50%);
-    color:var(--pink-dark);
-    font-size:20px;
-    font-weight:700;
-    z-index:2;
-}
-
-.money-node .node-icon {
-    font-size:24px;
-}
-
-.money-node strong {
-    display:block;
-    margin-top:7px;
-    font-size:15px;
-}
-
-.money-node small {
-    display:block;
-    color:var(--muted);
-    margin-top:4px;
-    font-size:11px;
-}
-
-@media(max-width:700px) {
-    .dashboard {
-        grid-template-columns: 1fr;
-    }
-
-    .flow-row {
-        grid-template-columns:1fr;
-    }
-
-    .flow-arrow {
-        transform:rotate(90deg);
-    }
-
-    .metric-grid {
-        grid-template-columns:1fr;
-    }
-
-    .trust-controls,
-    .acq-controls {
-        grid-template-columns:1fr 1fr;
-    }
-
-    .money-flow {
-        grid-template-columns:1fr;
-    }
-
-    .money-node:not(:last-child)::after {
-        content:'↓';
-        right:50%;
-        top:auto;
-        bottom:-19px;
-        transform:translateX(50%);
-    }
-
-    .cards {
-        grid-template-columns:repeat(2,1fr);
-    }
-}
-
-@media(max-width:550px) {
-    .cards,
-    .trust-controls,
-    .acq-controls,
-    .trust-results {
-        grid-template-columns:1fr;
-    }
-
-    .economics-input {
-        flex-direction:column;
-        align-items:stretch;
-    }
-
-    .economics-input input[type="number"] {
-        width:100%;
-    }
+@media(max-width:550px){
+    .cards{grid-template-columns:1fr}
+    .economics-input{flex-direction:column;align-items:stretch}
+    .economics-input input[type="number"]{width:100%}
 }
 </style>
 </head>
@@ -742,7 +403,6 @@ button:hover {
 
 <div class="dashboard">
 
-<!-- CONTROLS -->
 <div class="panel">
 
 <h2>MochaTrade Strategy</h2>
@@ -836,70 +496,32 @@ Paid acquisition monthly growth
 <h2>Trading Economics</h2>
 
 <div class="control">
-
 <label>
 Average monthly trading volume / trader
 <span class="value" id="volumeDisplay">$5,000</span>
 </label>
 
 <div class="economics-input">
-
-<input
-id="volumeSlider"
-type="range"
-min="0"
-max="100000"
-step="500"
-value="5000">
-
-<input
-id="volume"
-type="number"
-min="0"
-max="100000"
-step="500"
-value="5000">
-
+<input id="volumeSlider" type="range" min="0" max="100000" step="500" value="5000">
+<input id="volume" type="number" min="0" max="100000" step="500" value="5000">
 <span class="unit">USD</span>
-
 </div>
-
 </div>
 
 <div class="control">
-
 <label>
 Trading fee (basis points)
 <span class="value" id="feeDisplay">15 bps</span>
 </label>
 
 <div class="economics-input">
-
-<input
-id="feeSlider"
-type="range"
-min="0"
-max="100"
-step="0.1"
-value="15">
-
-<input
-id="fee"
-type="number"
-min="0"
-max="100"
-step="0.1"
-value="15">
-
+<input id="feeSlider" type="range" min="0" max="100" step="0.1" value="15">
+<input id="fee" type="number" min="0" max="100" step="0.1" value="15">
 <span class="unit">bps</span>
-
+</div>
 </div>
 
-</div>
-
-<button id="reset">
-Reset to baseline assumptions
-</button>
+<button id="reset">Reset to baseline assumptions</button>
 
 <div class="note">
 The model is a scenario simulator. Its outputs are illustrative rather
@@ -908,75 +530,45 @@ than a forecast of actual MochaTrade performance.
 
 </div>
 
-<!-- RESULTS -->
 <div>
 
-<!-- TRUST ENGINE -->
 <div id="trustTab" class="tab-panel active">
-
 <div class="story-header">
 <h2 class="story-title">🔐 TRUST ENGINE</h2>
-<p class="story-copy">
-Trust is modeled as a 0–100 composite built from four observable product signals.
-Move the inputs to see the gauge and modeled conversion probability respond.
-</p>
+<p class="story-copy">Trust is modeled as a 0–100 composite built from four observable product signals. Move the inputs to see the gauge and modeled conversion probability respond.</p>
 </div>
 
 <div class="trust-box">
-
 <div class="trust-gauge-wrap">
-
 <div class="trust-gauge">
-
 <canvas id="trustGauge" width="840" height="470"></canvas>
-
 <div class="trust-gauge-center">
 <div class="trust-gauge-score" id="trustGaugeScore">—</div>
 <div class="trust-gauge-label">TRUST SCORE / 100</div>
 </div>
-
 </div>
-
 </div>
 
 <div class="trust-controls">
-
 <div class="trust-control">
-<label>
-Learning
-<span id="learningValue">70%</span>
-</label>
+<label>Learning <span id="learningValue">70%</span></label>
 <input id="trustLearning" type="range" min="0" max="100" value="70">
 </div>
-
 <div class="trust-control">
-<label>
-Practice
-<span id="practiceValue">60%</span>
-</label>
+<label>Practice <span id="practiceValue">60%</span></label>
 <input id="trustPractice" type="range" min="0" max="100" value="60">
 </div>
-
 <div class="trust-control">
-<label>
-Platform interaction
-<span id="interactionValue">70%</span>
-</label>
+<label>Platform interaction <span id="interactionValue">70%</span></label>
 <input id="trustInteraction" type="range" min="0" max="100" value="70">
 </div>
-
 <div class="trust-control">
-<label>
-Confidence
-<span id="confidenceValue">60%</span>
-</label>
+<label>Confidence <span id="confidenceValue">60%</span></label>
 <input id="trustConfidence" type="range" min="0" max="100" value="60">
 </div>
-
 </div>
 
 <div class="trust-results">
-
 <div class="trust-result">
 <div class="card-title">Trust score</div>
 <div class="trust-result-value" id="trustScore">—</div>
@@ -986,74 +578,47 @@ Confidence
 <div class="trust-result">
 <div class="card-title">Modeled conversion probability</div>
 <div class="trust-result-value" id="trustConversion">—</div>
-<div class="trust-status" id="conversionStatus">
-Based on trust score
+<div class="trust-status" id="conversionStatus">Based on trust score</div>
 </div>
 </div>
-
-</div>
-
 </div>
 
 <div class="assumption">
-<strong>Model note:</strong>
-This trust score is an internal 0–100 simulator index, not a published market statistic.
-The four inputs are equally weighted. Conversion probability is modeled from the trust
-score using a transparent bounded relationship.
+<strong>Model note:</strong> this trust score is an internal 0–100 simulator index, not a published market statistic. The four inputs are equally weighted. Conversion probability is modeled from the trust score using a transparent bounded relationship.
+</div>
 </div>
 
-</div>
-
-
-<!-- REFERRAL ENGINE -->
 <div id="referralTab" class="tab-panel">
-
 <div class="story-header">
 <h2 class="story-title">REFERRAL ENGINE</h2>
-<p class="story-copy">
-And trust doesn't stop at conversion. A sufficiently engaged user can become an acquisition channel themselves.
-</p>
+<p class="story-copy">And trust doesn't stop at conversion. A sufficiently engaged user can become an acquisition channel themselves.</p>
 </div>
 
 <div class="control">
-<label>
-Referral participation
-<span class="value" id="referralStoryValue">—</span>
-</label>
-
-<input
-id="referralStorySlider"
-type="range"
-min="1"
-max="50"
-value="15">
+<label>Referral participation <span class="value" id="referralStoryValue">—</span></label>
+<input id="referralStorySlider" type="range" min="1" max="50" value="15">
 </div>
 
 <div class="metric-grid">
-
 <div class="metric-card">
 <div class="card-title">Trusted / engaged users</div>
 <strong id="trustedUsersMetric">—</strong>
 </div>
-
 <div class="metric-card">
 <div class="card-title">Referral users</div>
 <strong id="referralUsersMetric">—</strong>
 </div>
-
 <div class="metric-card">
 <div class="card-title">New users from referrals</div>
 <strong id="newReferralMetric">—</strong>
 </div>
-
 </div>
 
 <div class="mini-bars">
-
 <div class="mini-bar-row">
 <span>Engaged base</span>
 <div class="mini-bar-track">
-<div class="mini-bar-fill" id="engagedBar" style="background:#E7C85A"></div>
+<div class="mini-bar-fill" id="engagedBar" style="width:70%;background:#E7C85A"></div>
 </div>
 <strong id="engagedBarValue">—</strong>
 </div>
@@ -1061,7 +626,7 @@ value="15">
 <div class="mini-bar-row">
 <span>Advocates</span>
 <div class="mini-bar-track">
-<div class="mini-bar-fill" id="advocateBar" style="background:#E9B8C8"></div>
+<div class="mini-bar-fill" id="advocateBar" style="width:35%;background:#E9B8C8"></div>
 </div>
 <strong id="advocateBarValue">—</strong>
 </div>
@@ -1069,122 +634,66 @@ value="15">
 <div class="mini-bar-row">
 <span>New referrals</span>
 <div class="mini-bar-track">
-<div class="mini-bar-fill" id="newReferralBar" style="background:#C9899F"></div>
+<div class="mini-bar-fill" id="newReferralBar" style="width:50%;background:#C9899F"></div>
 </div>
 <strong id="newReferralBarValue">—</strong>
 </div>
-
 </div>
 
 <div class="flow-row">
-
 <div class="flow-step">Trusted users</div>
 <div class="flow-arrow">→</div>
 <div class="flow-step">Referrals</div>
 <div class="flow-arrow">→</div>
 <div class="flow-step">New users</div>
-
+</div>
 </div>
 
-</div>
-
-
-<!-- ACQUISITION MIX -->
 <div id="mixTab" class="tab-panel">
-
 <div class="story-header">
-
 <h2 class="story-title">Where do our users come from?</h2>
-
-<p class="story-copy">
-Use the three controls to model the acquisition mix.
-The displayed shares are normalized to 100%.
-</p>
-
+<p class="story-copy">Use the three controls to model the acquisition mix. The simulator keeps the total allocation at 100% and shows how the balance changes.</p>
 </div>
 
 <div class="acq-controls">
-
 <div class="acq-control">
-<label>
-Organic
-<span id="mixOrganicSliderValue">—</span>
-</label>
+<label>Organic <span id="mixOrganicSliderValue">—</span></label>
 <input id="mixOrganicSlider" type="range" min="0" max="100" value="70">
 </div>
 
 <div class="acq-control">
-<label>
-Referral
-<span id="mixReferralSliderValue">—</span>
-</label>
+<label>Referral <span id="mixReferralSliderValue">—</span></label>
 <input id="mixReferralSlider" type="range" min="0" max="100" value="15">
 </div>
 
 <div class="acq-control">
-<label>
-Paid
-<span id="mixPaidSliderValue">—</span>
-</label>
+<label>Paid <span id="mixPaidSliderValue">—</span></label>
 <input id="mixPaidSlider" type="range" min="0" max="100" value="15">
 </div>
-
 </div>
 
-<div class="mix-total" id="mixAllocationNote">
-Allocation: 100.0%
-</div>
+<div class="mix-total" id="mixAllocationNote">Allocation: 100%</div>
 
 <div class="chart-container">
-
 <div class="pie-wrap">
-
 <canvas id="mixPieChart" width="360" height="360"></canvas>
 
 <div class="source-legend">
-
-<div>
-<span class="source-dot" style="background:#E7C85A"></span>
-Organic
-<strong id="mixOrganic">—</strong>
+<div><span class="source-dot" style="background:#E7C85A"></span>Organic <strong id="mixOrganic">—</strong></div>
+<div><span class="source-dot" style="background:#E9B8C8"></span>Referral <strong id="mixReferral">—</strong></div>
+<div><span class="source-dot" style="background:#C9899F"></span>Paid <strong id="mixPaid">—</strong></div>
+</div>
+</div>
+</div>
 </div>
 
-<div>
-<span class="source-dot" style="background:#E9B8C8"></span>
-Referral
-<strong id="mixReferral">—</strong>
-</div>
-
-<div>
-<span class="source-dot" style="background:#C9899F"></span>
-Paid
-<strong id="mixPaid">—</strong>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- GROWTH FUNNEL -->
 <div id="loopTab" class="tab-panel">
-
 <div class="story-header">
-
 <h2 class="story-title">GROWTH FUNNEL</h2>
-
-<p class="story-copy">
-Follow the Month 12 user journey from acquisition through the sandbox and trust journey to the final customer base.
-</p>
-
+<p class="story-copy">Follow the live Month 12 user journey. Every number and percentage below recalculates when you change the strategy controls on the left.</p>
 </div>
 
 <div class="funnel">
-
 <div class="funnel-stage">
 <span>Registrations</span>
 <span id="funnelRegistrations">—</span>
@@ -1201,7 +710,7 @@ Follow the Month 12 user journey from acquisition through the sandbox and trust 
 </div>
 
 <div class="funnel-stage">
-<span>Converted users</span>
+<span>New converted traders</span>
 <span id="funnelConverted">—</span>
 </div>
 
@@ -1214,20 +723,16 @@ Follow the Month 12 user journey from acquisition through the sandbox and trust 
 <span>Customers / active traders</span>
 <span id="funnelActive">—</span>
 </div>
-
 </div>
 
 <div style="text-align:center">
-
 <span class="conversion-pill">
 Sandbox → customer:
 <strong id="funnelConversion">—</strong>
 </span>
-
 </div>
 
 <div class="metric-grid" style="margin-top:18px">
-
 <div class="metric-card">
 <div class="card-title">Acquisition → sandbox</div>
 <strong id="funnelSandboxRate">—</strong>
@@ -1239,91 +744,70 @@ Sandbox → customer:
 </div>
 
 <div class="metric-card">
-<div class="card-title">Sandbox → customer</div>
+<div class="card-title">Engaged → new trader</div>
+<strong id="funnelConversionRate">—</strong>
+</div>
+
+<div class="metric-card">
+<div class="card-title">New trader → active base</div>
+<strong id="funnelRetentionRate">—</strong>
+</div>
+
+<div class="metric-card">
+<div class="card-title">Registration → active customer</div>
 <strong id="funnelCustomerRate">—</strong>
 </div>
-
+</div>
 </div>
 
-</div>
-
-
-<!-- PAID VS ORGANIC VS REFERRAL -->
 <div id="paidTab" class="tab-panel">
-
 <div class="story-header">
-
 <h2 class="story-title">PAID VS ORGANIC VS REFERRAL</h2>
-
-<p class="story-copy">
-Referrals and organic acquisition form our non-paid growth engine.
-Paid acquisition is an additional accelerator.
-</p>
-
+<p class="story-copy">Referrals and organic acquisition form our non-paid growth engine. Paid acquisition is an additional accelerator.</p>
 </div>
 
 <div class="metric-grid">
-
 <div class="metric-card">
 <div class="card-title">Paid acquisition, Month 1</div>
 <strong id="paidBudgetStory">0 users</strong>
 </div>
-
 <div class="metric-card">
 <div class="card-title">Organic, Month 12</div>
 <strong id="paidOrganicStory">—</strong>
 </div>
-
 <div class="metric-card">
 <div class="card-title">Referral, Month 12</div>
 <strong id="paidReferralStory">—</strong>
 </div>
-
 </div>
 
 <div class="chart-container">
-
 <h2>12-Month Acquisition Mix</h2>
-
 <div class="chart-description">
 X-axis: Month • Y-axis: New users acquired • Stacked organic + referral + paid acquisition
 </div>
-
 <div class="chart-wrap">
 <canvas id="acquisitionChart"></canvas>
 </div>
-
 <div class="legend">
 <span class="acq-organic">Organic acquisition</span>
 <span class="acq-referral">Referral acquisition</span>
 <span class="acq-paid">Paid acquisition</span>
 </div>
-
 </div>
 
 <div class="assumption">
-<strong>Key message:</strong>
-When paid acquisition goes to zero, the organic and referral engines remain active.
+<strong>Key message:</strong> when paid acquisition goes to zero, our growth doesn't. The referral and organic engines remain active.
+</div>
 </div>
 
-</div>
-
-
-<!-- MONETISATION -->
 <div id="monetizationTab" class="tab-panel">
-
 <div class="story-header">
-
 <h2 class="story-title">MONETISATION</h2>
-
-<p class="story-copy">
-A clearer unit-economics view of how the active-trader base turns activity into trading volume, fees, and revenue.
-</p>
-
+<p class="story-copy">A clearer unit-economics view of how the active-trader base turns activity into trading volume, fees, and revenue.</p>
 </div>
 
 <div class="money-flow">
-
 <div class="money-node">
 <div class="node-icon">👥</div>
 <strong>Users</strong>
@@ -1353,11 +837,9 @@ A clearer unit-economics view of how the active-trader base turns activity into 
 <strong>Revenue</strong>
 <small id="moneyRevenue">—</small>
 </div>
-
 </div>
 
 <div class="metric-grid">
-
 <div class="metric-card">
 <div class="card-title">Fee rate</div>
 <strong id="feeStory">—</strong>
@@ -1372,41 +854,24 @@ A clearer unit-economics view of how the active-trader base turns activity into 
 <div class="card-title">Month 12 revenue</div>
 <strong id="revenueStory">—</strong>
 </div>
-
 </div>
 
 <div class="chart-container">
-
 <h2>Monthly Trading Volume & Revenue</h2>
-
-<div class="chart-description">
-X-axis: Month • Y-axis: USD
-</div>
-
+<div class="chart-description">X-axis: Month • Y-axis: USD</div>
 <div class="chart-wrap">
 <canvas id="moneyChart"></canvas>
 </div>
-
+</div>
 </div>
 
-</div>
-
-
-<!-- 12 MONTH OUTCOME -->
 <div id="outcomeTab" class="tab-panel">
-
 <div class="story-header">
-
 <h2 class="story-title">12-MONTH OUTCOME</h2>
-
-<p class="story-copy">
-The final payoff: users, active traders, revenue, and the comparison against the fixed baseline.
-</p>
-
+<p class="story-copy">The final payoff: users, active traders, revenue, and the comparison against the fixed baseline.</p>
 </div>
 
 <div class="cards">
-
 <div class="card">
 <div class="card-title">Users</div>
 <div class="card-value" id="totalUsers">—</div>
@@ -1426,17 +891,11 @@ The final payoff: users, active traders, revenue, and the comparison against the
 <div class="card-title">Profit</div>
 <div class="card-value" id="outcomeProfit">Not modeled</div>
 </div>
-
 </div>
 
 <div class="chart-container">
-
 <h2>MochaTrade Growth — 12 Months</h2>
-
-<div class="chart-description">
-X-axis: Month • Y-axis: Users
-</div>
-
+<div class="chart-description">X-axis: Month • Y-axis: Users</div>
 <div class="chart-wrap">
 <canvas id="growthChart"></canvas>
 </div>
@@ -1448,15 +907,12 @@ X-axis: Month • Y-axis: Users
 <span class="referrals">Approach — Referral registrations</span>
 <span class="baseline">Fixed baseline</span>
 </div>
-
 </div>
 
 <div class="chart-container" style="margin-top:20px">
-
 <h2>12-Month Projection</h2>
 
 <table>
-
 <thead>
 <tr>
 <th>Month</th>
@@ -1470,11 +926,8 @@ X-axis: Month • Y-axis: Users
 </thead>
 
 <tbody id="tableBody"></tbody>
-
 </table>
-
 </div>
-
 </div>
 
 </div>
@@ -1500,74 +953,38 @@ const defaults = {
     fee: 15
 };
 
-
-/* MODEL */
-
 function readInputs() {
-
     return {
         registrations: Number($("registrations").value),
-
-        sandboxRate:
-            Number($("sandboxRate").value) / 100,
-
-        engagementRate:
-            Number($("engagementRate").value) / 100,
-
-        conversionRate:
-            Number($("conversionRate").value) / 100,
-
-        referralRate:
-            Number($("referralRate").value) / 100,
-
-        friends:
-            Number($("friends").value),
-
-        growth:
-            Number($("growth").value) / 100,
-
-        retention:
-            Number($("retention").value) / 100,
-
-        paidStart:
-            Number($("paidStart").value),
-
-        paidGrowth:
-            Number($("paidGrowth").value) / 100,
-
-        volume:
-            Number($("volume").value),
-
-        fee:
-            Number($("fee").value) / 10000
+        sandboxRate: Number($("sandboxRate").value) / 100,
+        engagementRate: Number($("engagementRate").value) / 100,
+        conversionRate: Number($("conversionRate").value) / 100,
+        referralRate: Number($("referralRate").value) / 100,
+        friends: Number($("friends").value),
+        growth: Number($("growth").value) / 100,
+        retention: Number($("retention").value) / 100,
+        paidStart: Number($("paidStart").value),
+        paidGrowth: Number($("paidGrowth").value) / 100,
+        volume: Number($("volume").value),
+        fee: Number($("fee").value) / 10000
     };
 }
 
-
 function simulateScenario(inputs) {
-
     let activeRealTraders = 0;
     let previousEngagedUsers = 0;
-
     const data = [];
 
-    for(let month = 1; month <= 12; month++) {
+    for (let month = 1; month <= 12; month++) {
 
         const organicRegistrations =
-            inputs.registrations *
-            Math.pow(1 + inputs.growth, month - 1);
+            inputs.registrations * Math.pow(1 + inputs.growth, month - 1);
 
-        const advocates =
-            previousEngagedUsers *
-            inputs.referralRate;
-
-        const referralRegistrations =
-            advocates *
-            inputs.friends;
+        const advocates = previousEngagedUsers * inputs.referralRate;
+        const referralRegistrations = advocates * inputs.friends;
 
         const paidRegistrations =
-            inputs.paidStart *
-            Math.pow(1 + inputs.paidGrowth, month - 1);
+            inputs.paidStart * Math.pow(1 + inputs.paidGrowth, month - 1);
 
         const totalRegistrations =
             organicRegistrations +
@@ -1575,29 +992,25 @@ function simulateScenario(inputs) {
             paidRegistrations;
 
         const sandboxUsers =
-            totalRegistrations *
-            inputs.sandboxRate;
+            totalRegistrations * inputs.sandboxRate;
 
         const engagedUsers =
-            sandboxUsers *
-            inputs.engagementRate;
+            sandboxUsers * inputs.engagementRate;
 
         const newRealTraders =
-            engagedUsers *
-            inputs.conversionRate;
+            engagedUsers * inputs.conversionRate;
+
+        const retainedExistingTraders =
+            activeRealTraders * inputs.retention;
 
         activeRealTraders =
-            activeRealTraders *
-            inputs.retention +
-            newRealTraders;
+            retainedExistingTraders + newRealTraders;
 
         const tradingVolume =
-            activeRealTraders *
-            inputs.volume;
+            activeRealTraders * inputs.volume;
 
         const revenue =
-            tradingVolume *
-            inputs.fee;
+            tradingVolume * inputs.fee;
 
         data.push({
             month,
@@ -1607,6 +1020,8 @@ function simulateScenario(inputs) {
             engaged: engagedUsers,
             referrals: referralRegistrations,
             paid: paidRegistrations,
+            newRealTraders,
+            retainedExistingTraders,
             realTraders: activeRealTraders,
             volume: tradingVolume,
             revenue
@@ -1618,9 +1033,7 @@ function simulateScenario(inputs) {
     return data;
 }
 
-
 function simulate() {
-
     const inputs = readInputs();
 
     const baselineData =
@@ -1629,89 +1042,46 @@ function simulate() {
     const approachData =
         simulateScenario(inputs);
 
-    updateDashboard(
-        approachData,
-        baselineData
-    );
+    updateDashboard(approachData, baselineData);
 }
 
-
 function defaultsToInputs() {
-
     return {
-
-        registrations:
-            defaults.registrations,
-
-        sandboxRate:
-            defaults.sandboxRate / 100,
-
-        engagementRate:
-            defaults.engagementRate / 100,
-
-        conversionRate:
-            defaults.conversionRate / 100,
-
-        referralRate:
-            defaults.referralRate / 100,
-
-        friends:
-            defaults.friends,
-
-        growth:
-            defaults.growth / 100,
-
-        retention:
-            defaults.retention / 100,
-
-        paidStart:
-            defaults.paidStart,
-
-        paidGrowth:
-            defaults.paidGrowth / 100,
-
-        volume:
-            defaults.volume,
-
-        fee:
-            defaults.fee / 10000
+        registrations: defaults.registrations,
+        sandboxRate: defaults.sandboxRate / 100,
+        engagementRate: defaults.engagementRate / 100,
+        conversionRate: defaults.conversionRate / 100,
+        referralRate: defaults.referralRate / 100,
+        friends: defaults.friends,
+        growth: defaults.growth / 100,
+        retention: defaults.retention / 100,
+        paidStart: defaults.paidStart,
+        paidGrowth: defaults.paidGrowth / 100,
+        volume: defaults.volume,
+        fee: defaults.fee / 10000
     };
 }
 
-
 function money(value) {
-
     if(value >= 1000000000)
-        return "$" +
-        (value / 1000000000).toFixed(2) +
-        "B";
+        return "$" + (value / 1000000000).toFixed(2) + "B";
 
     if(value >= 1000000)
-        return "$" +
-        (value / 1000000).toFixed(2) +
-        "M";
+        return "$" + (value / 1000000).toFixed(2) + "M";
 
     if(value >= 1000)
-        return "$" +
-        (value / 1000).toFixed(1) +
-        "K";
+        return "$" + (value / 1000).toFixed(1) + "K";
 
-    return "$" +
-        Math.round(value);
+    return "$" + Math.round(value);
 }
-
 
 function number(value) {
     return Math.round(value).toLocaleString();
 }
 
-
-/* DASHBOARD */
-
 function updateDashboard(data, baselineData) {
 
-    const last =
-        data[data.length - 1];
+    const last = data[data.length - 1];
 
     $("totalUsers").textContent =
         number(last.registrations);
@@ -1750,253 +1120,118 @@ function updateDashboard(data, baselineData) {
         $("paidGrowth").value + "%";
 
     $("volumeDisplay").textContent =
-        "$" +
-        Number($("volume").value).toLocaleString();
+        "$" + Number($("volume").value).toLocaleString();
 
     $("feeDisplay").textContent =
-        Number($("fee").value).toFixed(1) +
-        " bps";
+        Number($("fee").value).toFixed(1) + " bps";
 
     drawMoneyChart(data, baselineData);
     drawGrowthChart(data, baselineData);
     drawAcquisitionChart(data);
-
-    updateStoryMetrics(
-        data,
-        baselineData
-    );
-
-    updateTable(
-        data,
-        baselineData
-    );
+    updateStoryMetrics(data, baselineData);
+    updateTable(data);
 }
 
+function setupCanvas(canvas, height = 440) {
 
-/* CANVAS */
+    const width = Math.max(canvas.clientWidth, 320);
+    const dpr = window.devicePixelRatio || 1;
 
-function setupCanvas(
-    canvas,
-    height = 440
-) {
+    canvas.width = width * dpr;
+    canvas.height = height * dpr;
 
-    const width =
-        Math.max(
-            canvas.clientWidth,
-            320
-        );
+    const ctx = canvas.getContext("2d");
 
-    const dpr =
-        window.devicePixelRatio || 1;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, width, height);
 
-    canvas.width =
-        width * dpr;
-
-    canvas.height =
-        height * dpr;
-
-    const ctx =
-        canvas.getContext("2d");
-
-    ctx.setTransform(
-        dpr,
-        0,
-        0,
-        dpr,
-        0,
-        0
-    );
-
-    ctx.clearRect(
-        0,
-        0,
-        width,
-        height
-    );
-
-    return {
-        ctx,
-        width,
-        height
-    };
+    return { ctx, width, height };
 }
-
 
 function formatAxisNumber(value) {
 
-    if(value >= 1000000000)
-        return (
-            value /
-            1000000000
-        ).toFixed(1) + "B";
+    if (value >= 1000000000)
+        return (value / 1000000000).toFixed(1) + "B";
 
-    if(value >= 1000000)
-        return (
-            value /
-            1000000
-        ).toFixed(1) + "M";
+    if (value >= 1000000)
+        return (value / 1000000).toFixed(1) + "M";
 
-    if(value >= 1000)
-        return (
-            value /
-            1000
-        ).toFixed(1) + "K";
+    if (value >= 1000)
+        return (value / 1000).toFixed(1) + "K";
 
-    return Math.round(value)
-        .toLocaleString();
+    return Math.round(value).toLocaleString();
 }
 
+function drawAxes(ctx, width, height, padding, maxValue, yLabel) {
 
-function drawAxes(
-    ctx,
-    width,
-    height,
-    padding,
-    maxValue,
-    yLabel
-) {
+    const plotBottom = height - padding;
+    const plotTop = padding;
+    const plotRight = width - 20;
+    const plotHeight = plotBottom - plotTop;
+    const plotWidth = plotRight - padding;
 
-    const plotBottom =
-        height - padding;
-
-    const plotTop =
-        padding;
-
-    const plotRight =
-        width - 20;
-
-    const plotHeight =
-        plotBottom - plotTop;
-
-    const plotWidth =
-        plotRight - padding;
-
-    ctx.font =
-        "12px Arial";
-
+    ctx.font = "12px Arial";
     ctx.lineWidth = 1;
 
-    for(let i = 0; i <= 5; i++) {
+    for (let i = 0; i <= 5; i++) {
 
-        const ratio =
-            i / 5;
+        const ratio = i / 5;
+        const y = plotBottom - ratio * plotHeight;
 
-        const y =
-            plotBottom -
-            ratio * plotHeight;
-
-        ctx.strokeStyle =
-            "#EDE3D7";
-
+        ctx.strokeStyle = "#EDE3D7";
         ctx.beginPath();
-
-        ctx.moveTo(
-            padding,
-            y
-        );
-
-        ctx.lineTo(
-            plotRight,
-            y
-        );
-
+        ctx.moveTo(padding, y);
+        ctx.lineTo(plotRight, y);
         ctx.stroke();
 
-        ctx.fillStyle =
-            "#7A6E72";
-
-        ctx.textAlign =
-            "right";
+        ctx.fillStyle = "#7A6E72";
+        ctx.textAlign = "right";
 
         ctx.fillText(
-            formatAxisNumber(
-                maxValue * ratio
-            ),
+            formatAxisNumber(maxValue * ratio),
             padding - 8,
             y + 4
         );
     }
 
-    ctx.strokeStyle =
-        "#D2AE42";
-
-    ctx.lineWidth =
-        1.5;
+    ctx.strokeStyle = "#D2AE42";
+    ctx.lineWidth = 1.5;
 
     ctx.beginPath();
-
-    ctx.moveTo(
-        padding,
-        plotTop
-    );
-
-    ctx.lineTo(
-        padding,
-        plotBottom
-    );
-
-    ctx.lineTo(
-        plotRight,
-        plotBottom
-    );
-
+    ctx.moveTo(padding, plotTop);
+    ctx.lineTo(padding, plotBottom);
+    ctx.lineTo(plotRight, plotBottom);
     ctx.stroke();
 
     ctx.save();
+    ctx.translate(15, height / 2);
+    ctx.rotate(-Math.PI / 2);
 
-    ctx.translate(
-        15,
-        height / 2
-    );
+    ctx.fillStyle = "#B47A91";
+    ctx.textAlign = "center";
+    ctx.font = "12px Arial";
 
-    ctx.rotate(
-        -Math.PI / 2
-    );
-
-    ctx.fillStyle =
-        "#B47A91";
-
-    ctx.textAlign =
-        "center";
-
-    ctx.font =
-        "12px Arial";
-
-    ctx.fillText(
-        yLabel,
-        0,
-        0
-    );
+    ctx.fillText(yLabel, 0, 0);
 
     ctx.restore();
 
-    ctx.fillStyle =
-        "#B47A91";
-
-    ctx.textAlign =
-        "center";
-
-    ctx.font =
-        "12px Arial";
+    ctx.fillStyle = "#B47A91";
+    ctx.textAlign = "center";
+    ctx.font = "12px Arial";
 
     ctx.fillText(
         "Month",
-        padding +
-        plotWidth / 2,
+        padding + plotWidth / 2,
         height - 2
     );
 
-    for(let i = 0; i < 12; i++) {
+    for (let i = 0; i < 12; i++) {
 
         const x =
-            padding +
-            i * plotWidth / 11;
+            padding + i * plotWidth / 11;
 
-        ctx.fillStyle =
-            "#7A6E72";
-
-        ctx.textAlign =
-            "center";
+        ctx.fillStyle = "#7A6E72";
+        ctx.textAlign = "center";
 
         ctx.fillText(
             "M" + (i + 1),
@@ -2014,7 +1249,6 @@ function drawAxes(
     };
 }
 
-
 function drawSeries(
     ctx,
     data,
@@ -2025,98 +1259,61 @@ function drawSeries(
     dashed = false
 ) {
 
-    ctx.strokeStyle =
-        color;
-
-    ctx.lineWidth =
-        dashed ? 2 : 3;
-
-    ctx.setLineDash(
-        dashed
-            ? [7,6]
-            : []
-    );
+    ctx.strokeStyle = color;
+    ctx.lineWidth = dashed ? 2 : 3;
+    ctx.setLineDash(dashed ? [7, 6] : []);
 
     ctx.beginPath();
 
-    data.forEach(
-        (d,i) => {
+    data.forEach((d, i) => {
 
-            const x =
-                axes.padding +
-                i *
-                axes.plotWidth / 11;
+        const x =
+            axes.padding +
+            i * axes.plotWidth / 11;
 
-            const y =
-                axes.plotBottom -
-                (
-                    d[key] /
-                    maxValue
-                ) *
-                axes.plotHeight;
+        const y =
+            axes.plotBottom -
+            (d[key] / maxValue) *
+            axes.plotHeight;
 
-            if(i === 0)
-                ctx.moveTo(x,y);
-            else
-                ctx.lineTo(x,y);
-        }
-    );
+        if (i === 0)
+            ctx.moveTo(x, y);
+        else
+            ctx.lineTo(x, y);
+    });
 
     ctx.stroke();
-
     ctx.setLineDash([]);
 }
 
+function drawGrowthChart(data, baselineData) {
 
-/* GROWTH CHART */
+    const canvas = $("growthChart");
 
-function drawGrowthChart(
-    data,
-    baselineData
-) {
-
-    const canvas =
-        $("growthChart");
-
-    const {
-        ctx,
-        width,
-        height
-    } =
+    const { ctx, width, height } =
         setupCanvas(canvas);
 
     const padding = 58;
 
     const allValues = [
-
-        ...data.flatMap(
-            d => [
-                d.registrations,
-                d.sandbox,
-                d.realTraders,
-                d.referrals
-            ]
-        ),
-
-        ...baselineData.flatMap(
-            d => [
-                d.registrations,
-                d.sandbox,
-                d.realTraders,
-                d.referrals
-            ]
-        )
-
+        ...data.flatMap(d => [
+            d.registrations,
+            d.sandbox,
+            d.realTraders,
+            d.referrals
+        ]),
+        ...baselineData.flatMap(d => [
+            d.registrations,
+            d.sandbox,
+            d.realTraders,
+            d.referrals
+        ])
     ];
 
     const maxValue =
-        Math.max(
-            ...allValues,
-            1
-        ) * 1.12;
+        Math.max(...allValues, 1) * 1.12;
 
     const axes = {
-
         ...drawAxes(
             ctx,
             width,
@@ -2125,7 +1322,6 @@ function drawGrowthChart(
             maxValue,
             "Users"
         ),
-
         padding
     };
 
@@ -2176,52 +1372,30 @@ function drawGrowthChart(
     );
 }
 
+function drawMoneyChart(data, baselineData) {
 
-/* MONEY CHART */
+    const canvas = $("moneyChart");
 
-function drawMoneyChart(
-    data,
-    baselineData
-) {
-
-    const canvas =
-        $("moneyChart");
-
-    const {
-        ctx,
-        width,
-        height
-    } =
+    const { ctx, width, height } =
         setupCanvas(canvas);
 
     const padding = 58;
 
     const allValues = [
-
-        ...data.flatMap(
-            d => [
-                d.volume,
-                d.revenue
-            ]
-        ),
-
-        ...baselineData.flatMap(
-            d => [
-                d.volume,
-                d.revenue
-            ]
-        )
-
+        ...data.flatMap(d => [
+            d.volume,
+            d.revenue
+        ]),
+        ...baselineData.flatMap(d => [
+            d.volume,
+            d.revenue
+        ])
     ];
 
     const maxValue =
-        Math.max(
-            ...allValues,
-            1
-        ) * 1.12;
+        Math.max(...allValues, 1) * 1.12;
 
     const axes = {
-
         ...drawAxes(
             ctx,
             width,
@@ -2230,7 +1404,6 @@ function drawMoneyChart(
             maxValue,
             "USD"
         ),
-
         padding
     };
 
@@ -2262,14 +1435,9 @@ function drawMoneyChart(
         maxValue
     );
 
-    ctx.font =
-        "12px Arial";
-
-    ctx.textAlign =
-        "left";
-
-    ctx.fillStyle =
-        "#7A6E72";
+    ctx.font = "12px Arial";
+    ctx.textAlign = "left";
+    ctx.fillStyle = "#7A6E72";
 
     ctx.fillText(
         "— Approach volume",
@@ -2283,8 +1451,7 @@ function drawMoneyChart(
         18
     );
 
-    ctx.fillStyle =
-        "#B8B1A8";
+    ctx.fillStyle = "#B8B1A8";
 
     ctx.fillText(
         "– – Fixed baseline volume",
@@ -2293,22 +1460,13 @@ function drawMoneyChart(
     );
 }
 
-
-/* ACQUISITION CHART */
-
 function drawAcquisitionChart(data) {
 
-    const canvas =
-        $("acquisitionChart");
+    const canvas = $("acquisitionChart");
 
-    if(!canvas)
-        return;
+    if (!canvas) return;
 
-    const {
-        ctx,
-        width,
-        height
-    } =
+    const { ctx, width, height } =
         setupCanvas(canvas);
 
     const padding = 68;
@@ -2325,7 +1483,6 @@ function drawAcquisitionChart(data) {
         ) * 1.12;
 
     const axes = {
-
         ...drawAxes(
             ctx,
             width,
@@ -2334,125 +1491,77 @@ function drawAcquisitionChart(data) {
             maxValue,
             "New users"
         ),
-
         padding
     };
 
     const barWidth =
         Math.min(
             54,
-            (axes.plotWidth / 12) *
-            .62
+            (axes.plotWidth / 12) * 0.62
         );
 
-    data.forEach(
-        (d,i) => {
+    data.forEach((d, i) => {
 
-            const xCenter =
-                axes.padding +
-                i *
-                axes.plotWidth / 11;
+        const xCenter =
+            axes.padding +
+            i * axes.plotWidth / 11;
 
-            const x =
-                xCenter -
-                barWidth / 2;
+        const x =
+            xCenter - barWidth / 2;
 
-            let y =
-                axes.plotBottom;
+        let y =
+            axes.plotBottom;
 
-            const segments = [
+        const segments = [
+            {
+                value: d.organicRegistrations,
+                color: "#E7C85A"
+            },
+            {
+                value: d.referrals,
+                color: "#E9B8C8"
+            },
+            {
+                value: d.paid,
+                color: "#C9899F"
+            }
+        ];
 
-                {
-                    value:
-                        d.organicRegistrations,
-                    color:
-                        "#E7C85A"
-                },
+        segments.forEach(segment => {
 
-                {
-                    value:
-                        d.referrals,
-                    color:
-                        "#E9B8C8"
-                },
+            const segmentHeight =
+                (segment.value / maxValue) *
+                axes.plotHeight;
 
-                {
-                    value:
-                        d.paid,
-                    color:
-                        "#C9899F"
-                }
+            y -= segmentHeight;
 
-            ];
+            ctx.fillStyle =
+                segment.color;
 
-            segments.forEach(
-                segment => {
-
-                    const segmentHeight =
-                        (
-                            segment.value /
-                            maxValue
-                        ) *
-                        axes.plotHeight;
-
-                    y -=
-                        segmentHeight;
-
-                    ctx.fillStyle =
-                        segment.color;
-
-                    ctx.fillRect(
-                        x,
-                        y,
-                        barWidth,
-                        segmentHeight
-                    );
-                }
-            );
-
-            ctx.strokeStyle =
-                "#FFFFFF";
-
-            ctx.lineWidth = 1;
-
-            ctx.strokeRect(
+            ctx.fillRect(
                 x,
                 y,
                 barWidth,
-                axes.plotBottom - y
+                segmentHeight
             );
+        });
 
-            ctx.fillStyle =
-                "#7A6E72";
+        ctx.strokeStyle = "#FFFFFF";
+        ctx.lineWidth = 1;
 
-            ctx.font =
-                "10px Arial";
+        ctx.strokeRect(
+            x,
+            y,
+            barWidth,
+            axes.plotBottom - y
+        );
+    });
 
-            ctx.textAlign =
-                "center";
+    if (data.every(d => d.paid === 0)) {
 
-            ctx.fillText(
-                number(
-                    d.organicRegistrations +
-                    d.referrals +
-                    d.paid
-                ),
-                xCenter,
-                y - 6
-            );
-        }
-    );
-
-    if(data.every(d => d.paid === 0)) {
-
-        ctx.fillStyle =
-            "#C9899F";
-
-        ctx.font =
-            "600 12px Poppins, Arial";
-
-        ctx.textAlign =
-            "right";
+        ctx.fillStyle = "#C9899F";
+        ctx.font = "600 12px Poppins, Arial";
+        ctx.textAlign = "right";
 
         ctx.fillText(
             "Paid acquisition starts at 0",
@@ -2462,45 +1571,29 @@ function drawAcquisitionChart(data) {
     }
 }
 
-
-/* STORY METRICS */
-
-function updateStoryMetrics(
-    data,
-    baselineData
-) {
+function updateStoryMetrics(data) {
 
     const last =
         data[data.length - 1];
 
     const learning =
-        Number(
-            $("trustLearning").value
-        );
+        Number($("trustLearning").value);
 
     const practice =
-        Number(
-            $("trustPractice").value
-        );
+        Number($("trustPractice").value);
 
     const interaction =
-        Number(
-            $("trustInteraction").value
-        );
+        Number($("trustInteraction").value);
 
     const confidence =
-        Number(
-            $("trustConfidence").value
-        );
+        Number($("trustConfidence").value);
 
     const trust =
         Math.round(
-            (
-                learning +
-                practice +
-                interaction +
-                confidence
-            ) / 4
+            0.25 * learning +
+            0.25 * practice +
+            0.25 * interaction +
+            0.25 * confidence
         );
 
     const conversion =
@@ -2508,9 +1601,7 @@ function updateStoryMetrics(
             30,
             Math.max(
                 2,
-                2 +
-                (trust / 100) *
-                28
+                2 + (trust / 100) * 28
             )
         );
 
@@ -2553,14 +1644,12 @@ function updateStoryMetrics(
         status;
 
     $("trustStatus").className =
-        "trust-status " +
-        statusClass;
+        "trust-status " + statusClass;
 
     $("conversionStatus").textContent =
         "Bounded model range: 2%–30%";
 
     drawTrustGauge(trust);
-
 
     $("referralStoryValue").textContent =
         $("referralRate").value + "%";
@@ -2570,9 +1659,8 @@ function updateStoryMetrics(
 
     const advocates =
         last.engaged *
-        Number(
-            $("referralRate").value
-        ) / 100;
+        Number($("referralRate").value) /
+        100;
 
     $("trustedUsersMetric").textContent =
         number(last.engaged);
@@ -2601,52 +1689,28 @@ function updateStoryMetrics(
         );
 
     $("engagedBar").style.width =
-        (
-            last.engaged /
-            barMax *
-            100
-        ) + "%";
+        (last.engaged / barMax * 100) + "%";
 
     $("advocateBar").style.width =
-        (
-            advocates /
-            barMax *
-            100
-        ) + "%";
+        (advocates / barMax * 100) + "%";
 
     $("newReferralBar").style.width =
-        (
-            last.referrals /
-            barMax *
-            100
-        ) + "%";
-
+        (last.referrals / barMax * 100) + "%";
 
     updateAcquisitionMix();
 
-
     $("paidBudgetStory").textContent =
-        number(
-            Number(
-                $("paidStart").value
-            )
-        ) + " users";
+        number(Number($("paidStart").value)) +
+        " users";
 
     $("paidOrganicStory").textContent =
-        number(
-            last.organicRegistrations
-        );
+        number(last.organicRegistrations);
 
     $("paidReferralStory").textContent =
-        number(
-            last.referrals
-        );
-
+        number(last.referrals);
 
     $("feeStory").textContent =
-        Number(
-            $("fee").value
-        ).toFixed(1) +
+        Number($("fee").value).toFixed(1) +
         " bps";
 
     $("volumeStory").textContent =
@@ -2668,27 +1732,40 @@ function updateStoryMetrics(
         money(last.volume);
 
     $("moneyFee").textContent =
-        Number(
-            $("fee").value
-        ).toFixed(1) +
+        Number($("fee").value).toFixed(1) +
         " bps";
 
     $("moneyRevenue").textContent =
         money(last.revenue);
 
-
     const converted =
-        last.engaged *
-        Number(
-            $("conversionRate").value
-        ) / 100;
+        last.newRealTraders;
 
     const retained =
-        Math.max(
-            0,
-            last.realTraders -
-            converted
-        );
+        last.retainedExistingTraders;
+
+    const sandboxRate =
+        last.sandbox /
+        Math.max(last.registrations, 1) *
+        100;
+
+    const engagementRate =
+        last.engaged /
+        Math.max(last.sandbox, 1) *
+        100;
+
+    const conversionRate =
+        converted /
+        Math.max(last.engaged, 1) *
+        100;
+
+    const retentionRate =
+        Number($("retention").value);
+
+    const customerRate =
+        last.realTraders /
+        Math.max(last.registrations, 1) *
+        100;
 
     $("funnelRegistrations").textContent =
         number(last.registrations);
@@ -2709,143 +1786,95 @@ function updateStoryMetrics(
         number(last.realTraders);
 
     $("funnelConversion").textContent =
-        (
-            last.realTraders /
-            Math.max(last.sandbox,1) *
-            100
-        ).toFixed(1) + "%";
+        customerRate.toFixed(1) + "%";
 
     $("funnelSandboxRate").textContent =
-        (
-            last.sandbox /
-            Math.max(last.registrations,1) *
-            100
-        ).toFixed(1) + "%";
+        sandboxRate.toFixed(1) + "%";
 
     $("funnelEngagementRate").textContent =
-        (
-            last.engaged /
-            Math.max(last.sandbox,1) *
-            100
-        ).toFixed(1) + "%";
+        engagementRate.toFixed(1) + "%";
+
+    $("funnelConversionRate").textContent =
+        conversionRate.toFixed(1) + "%";
+
+    $("funnelRetentionRate").textContent =
+        retentionRate.toFixed(1) + "%";
 
     $("funnelCustomerRate").textContent =
-        (
-            last.realTraders /
-            Math.max(last.sandbox,1) *
-            100
-        ).toFixed(1) + "%";
+        customerRate.toFixed(1) + "%";
 }
 
-
-/* TRUST SPEEDOMETER */
+let trustGaugeScore = 0;
 
 function drawTrustGauge(score) {
 
     const canvas =
         $("trustGauge");
 
-    if(!canvas)
-        return;
+    if (!canvas) return;
+
+    trustGaugeScore = score;
 
     const ctx =
         canvas.getContext("2d");
 
-    const w =
-        canvas.width;
+    const w = canvas.width;
+    const h = canvas.height;
 
-    const h =
-        canvas.height;
+    ctx.clearRect(0, 0, w, h);
 
-    ctx.clearRect(
-        0,
-        0,
-        w,
-        h
-    );
+    const cx = w / 2;
+    const cy = h * 0.92;
+    const r = Math.min(w * 0.39, h * 0.78);
 
-    const cx =
-        w / 2;
-
-    const cy =
-        h * .92;
-
-    const r =
-        Math.min(
-            w * .39,
-            h * .78
-        );
-
-    const start =
-        Math.PI;
+    const start = Math.PI;
 
     const segments = [
-
         {
-            from:0,
-            to:40,
-            color:"#C94F4F"
+            from: 0,
+            to: 40,
+            color: "#C94F4F"
         },
-
         {
-            from:40,
-            to:70,
-            color:"#E7C85A"
+            from: 40,
+            to: 70,
+            color: "#E7C85A"
         },
-
         {
-            from:70,
-            to:100,
-            color:"#5D9B68"
+            from: 70,
+            to: 100,
+            color: "#5D9B68"
         }
-
     ];
 
-    ctx.lineCap =
-        "round";
-
+    ctx.lineCap = "round";
     ctx.lineWidth =
-        Math.max(
-            34,
-            w / 24
+        Math.max(34, w / 24);
+
+    segments.forEach(s => {
+
+        ctx.beginPath();
+
+        ctx.strokeStyle =
+            s.color;
+
+        ctx.arc(
+            cx,
+            cy,
+            r,
+            start + (s.from / 100) * Math.PI,
+            start + (s.to / 100) * Math.PI
         );
 
-    segments.forEach(
-        segment => {
-
-            ctx.beginPath();
-
-            ctx.strokeStyle =
-                segment.color;
-
-            ctx.arc(
-                cx,
-                cy,
-                r,
-                start +
-                (segment.from / 100) *
-                Math.PI,
-                start +
-                (segment.to / 100) *
-                Math.PI
-            );
-
-            ctx.stroke();
-        }
-    );
-
-
-    /* needle */
+        ctx.stroke();
+    });
 
     ctx.lineWidth = 5;
-
-    ctx.strokeStyle =
-        "#40363A";
+    ctx.strokeStyle = "#40363A";
 
     const angle =
         start +
-        (score / 100) *
-        Math.PI;
+        (score / 100) * Math.PI;
 
     const nx =
         cx +
@@ -2858,17 +1887,8 @@ function drawTrustGauge(score) {
         (r - 18);
 
     ctx.beginPath();
-
-    ctx.moveTo(
-        cx,
-        cy
-    );
-
-    ctx.lineTo(
-        nx,
-        ny
-    );
-
+    ctx.moveTo(cx, cy);
+    ctx.lineTo(nx, ny);
     ctx.stroke();
 
     ctx.beginPath();
@@ -2885,7 +1905,6 @@ function drawTrustGauge(score) {
     );
 
     ctx.fill();
-
 
     ctx.font =
         "600 18px Poppins,Arial";
@@ -2915,106 +1934,65 @@ function drawTrustGauge(score) {
     );
 }
 
-
-/* ACQUISITION PIE */
-
 function updateAcquisitionMix() {
 
     const values = [
-
-        Number(
-            $("mixOrganicSlider").value
-        ),
-
-        Number(
-            $("mixReferralSlider").value
-        ),
-
-        Number(
-            $("mixPaidSlider").value
-        )
-
+        Number($("mixOrganicSlider").value),
+        Number($("mixReferralSlider").value),
+        Number($("mixPaidSlider").value)
     ];
 
     const total =
         values.reduce(
-            (a,b) => a + b,
+            (a, b) => a + b,
             0
         ) || 1;
 
     const shares =
-        values.map(
-            v => v / total
-        );
+        values.map(v => v / total);
 
-
-    const names = [
+    [
         "Organic",
         "Referral",
         "Paid"
-    ];
+    ].forEach((name, i) => {
 
+        $("mix" + name + "SliderValue")
+            .textContent =
+            (shares[i] * 100).toFixed(1) +
+            "%";
 
-    names.forEach(
-        (name,i) => {
+        $("mix" + name)
+            .textContent =
+            Math.round(shares[i] * 100) +
+            "%";
+    });
 
-            $("mix" + name + "SliderValue")
-                .textContent =
-                (
-                    shares[i] *
-                    100
-                ).toFixed(1) + "%";
-
-            $("mix" + name)
-                .textContent =
-                Math.round(
-                    shares[i] * 100
-                ) + "%";
-        }
-    );
-
-
-    $("mixAllocationNote")
-        .textContent =
+    $("mixAllocationNote").textContent =
         "Normalized allocation: 100.0%";
 
-
     drawMixPie({
-        organicRegistrations:
-            shares[0],
-
-        referrals:
-            shares[1],
-
-        paid:
-            shares[2]
+        organicRegistrations: shares[0],
+        referrals: shares[1],
+        paid: shares[2]
     });
 }
-
 
 function drawMixPie(last) {
 
     const canvas =
         $("mixPieChart");
 
-    if(!canvas)
-        return;
+    if (!canvas) return;
 
     const ctx =
         canvas.getContext("2d");
 
-    const w =
-        canvas.width;
+    const w = canvas.width;
+    const h = canvas.height;
 
-    const h =
-        canvas.height;
-
-    const cx =
-        w / 2;
-
-    const cy =
-        h / 2;
-
+    const cx = w / 2;
+    const cy = h / 2;
     const r = 125;
 
     ctx.clearRect(
@@ -3025,71 +2003,52 @@ function drawMixPie(last) {
     );
 
     const vals = [
-
         last.organicRegistrations,
-
         last.referrals,
-
         last.paid
     ];
 
     const colors = [
-
         "#E7C85A",
-
         "#E9B8C8",
-
         "#C9899F"
     ];
 
     const total =
         vals.reduce(
-            (a,b) => a + b,
+            (a, b) => a + b,
             0
         ) || 1;
 
-    let angle =
-        -Math.PI / 2;
+    let a = -Math.PI / 2;
 
+    vals.forEach((v, i) => {
 
-    vals.forEach(
-        (value,i) => {
+        const end =
+            a +
+            v / total *
+            Math.PI * 2;
 
-            const end =
-                angle +
-                value /
-                total *
-                Math.PI *
-                2;
+        ctx.beginPath();
+        ctx.moveTo(cx, cy);
 
-            ctx.beginPath();
+        ctx.arc(
+            cx,
+            cy,
+            r,
+            a,
+            end
+        );
 
-            ctx.moveTo(
-                cx,
-                cy
-            );
+        ctx.closePath();
 
-            ctx.arc(
-                cx,
-                cy,
-                r,
-                angle,
-                end
-            );
+        ctx.fillStyle =
+            colors[i];
 
-            ctx.closePath();
+        ctx.fill();
 
-            ctx.fillStyle =
-                colors[i];
-
-            ctx.fill();
-
-            angle = end;
-        }
-    );
-
-
-    /* donut center */
+        a = end;
+    });
 
     ctx.beginPath();
 
@@ -3105,7 +2064,6 @@ function drawMixPie(last) {
         "#FFFCF5";
 
     ctx.fill();
-
 
     ctx.fillStyle =
         "#40363A";
@@ -3132,48 +2090,25 @@ function drawMixPie(last) {
     );
 }
 
-
-/* TABLE */
-
-function updateTable(
-    data,
-    baselineData
-) {
+function updateTable(data) {
 
     $("tableBody").innerHTML =
-        data.map(
-            d => `
-
-<tr>
-
-<td>${d.month}</td>
-
-<td>${number(d.registrations)}</td>
-
-<td>${number(d.sandbox)}</td>
-
-<td>${number(d.referrals)}</td>
-
-<td>${number(d.realTraders)}</td>
-
-<td>${money(d.volume)}</td>
-
-<td>${money(d.revenue)}</td>
-
-</tr>
-
-`
-        ).join("");
+        data.map(d => `
+            <tr>
+                <td>${d.month}</td>
+                <td>${number(d.registrations)}</td>
+                <td>${number(d.sandbox)}</td>
+                <td>${number(d.referrals)}</td>
+                <td>${number(d.realTraders)}</td>
+                <td>${money(d.volume)}</td>
+                <td>${money(d.revenue)}</td>
+            </tr>
+        `).join("");
 }
 
-
-/* TRADING ECONOMICS */
-
-$("volumeSlider")
-.addEventListener(
+$("volumeSlider").addEventListener(
     "input",
     function() {
-
         $("volume").value =
             this.value;
 
@@ -3181,19 +2116,17 @@ $("volumeSlider")
     }
 );
 
-
-$("volume")
-.addEventListener(
+$("volume").addEventListener(
     "input",
     function() {
 
         let value =
             Number(this.value);
 
-        if(value < 0)
+        if (value < 0)
             value = 0;
 
-        if(value > 100000)
+        if (value > 100000)
             value = 100000;
 
         $("volumeSlider").value =
@@ -3203,9 +2136,7 @@ $("volume")
     }
 );
 
-
-$("feeSlider")
-.addEventListener(
+$("feeSlider").addEventListener(
     "input",
     function() {
 
@@ -3216,19 +2147,17 @@ $("feeSlider")
     }
 );
 
-
-$("fee")
-.addEventListener(
+$("fee").addEventListener(
     "input",
     function() {
 
         let value =
             Number(this.value);
 
-        if(value < 0)
+        if (value < 0)
             value = 0;
 
-        if(value > 100)
+        if (value > 100)
             value = 100;
 
         $("feeSlider").value =
@@ -3238,210 +2167,135 @@ $("fee")
     }
 );
 
-
-/* STRATEGY CONTROLS */
-
 const controls = [
-
     "registrations",
-
     "sandboxRate",
-
     "engagementRate",
-
     "conversionRate",
-
     "referralRate",
-
     "friends",
-
     "growth",
-
     "retention",
-
     "paidStart",
-
     "paidGrowth"
-
 ];
 
+controls.forEach(id => {
 
-controls.forEach(
-    id => {
+    $(id).addEventListener(
+        "input",
+        simulate
+    );
 
-        $(id).addEventListener(
-            "input",
-            simulate
-        );
-
-    }
-);
-
-
-/* TRUST CONTROLS */
+});
 
 [
     "trustLearning",
     "trustPractice",
     "trustInteraction",
     "trustConfidence"
+].forEach(id => {
 
-].forEach(
-    id => {
+    $(id).addEventListener(
+        "input",
+        simulate
+    );
 
-        $(id).addEventListener(
-            "input",
-            simulate
-        );
-
-    }
-);
-
-
-/* ACQUISITION MIX CONTROLS */
+});
 
 [
     "mixOrganicSlider",
     "mixReferralSlider",
     "mixPaidSlider"
+].forEach(id => {
 
-].forEach(
-    id => {
+    $(id).addEventListener(
+        "input",
+        updateAcquisitionMix
+    );
 
-        $(id).addEventListener(
-            "input",
-            updateAcquisitionMix
-        );
-
-    }
-);
-
-
-/* REFERRAL CONTROL */
+});
 
 $("referralStorySlider")
-.addEventListener(
-    "input",
-    function() {
+    .addEventListener(
+        "input",
+        function() {
 
-        $("referralRate").value =
-            this.value;
+            $("referralRate").value =
+                this.value;
 
-        simulate();
-    }
-);
-
-
-/* TABS */
+            simulate();
+        }
+    );
 
 document
 .querySelectorAll(".tab-button")
-.forEach(
-    button => {
+.forEach(button => {
 
-        button.addEventListener(
-            "click",
-            () => {
+    button.addEventListener(
+        "click",
+        () => {
 
-                document
-                .querySelectorAll(
-                    ".tab-button"
-                )
-                .forEach(
-                    btn =>
-                    btn.classList
-                    .remove("active")
-                );
+            document
+            .querySelectorAll(".tab-button")
+            .forEach(btn =>
+                btn.classList.remove("active")
+            );
 
-                document
-                .querySelectorAll(
-                    ".tab-panel"
-                )
-                .forEach(
-                    panel =>
-                    panel.classList
-                    .remove("active")
-                );
+            document
+            .querySelectorAll(".tab-panel")
+            .forEach(panel =>
+                panel.classList.remove("active")
+            );
 
-                button
-                .classList
-                .add("active");
+            button.classList.add("active");
 
-                $(
-                    button.dataset.tab
-                )
-                .classList
-                .add("active");
+            $(button.dataset.tab)
+                .classList.add("active");
 
-                simulate();
-            }
-        );
+            simulate();
+        }
+    );
 
-    }
-);
+});
 
-
-/* RESET */
-
-$("reset")
-.addEventListener(
+$("reset").addEventListener(
     "click",
     () => {
 
-        Object.entries(
-            defaults
-        ).forEach(
-            ([key,value]) => {
+        Object.entries(defaults)
+        .forEach(([key, value]) => {
 
-                if(key === "volume") {
+            if (key === "volume") {
 
-                    $("volume").value =
-                        value;
+                $("volume").value =
+                    value;
 
-                    $("volumeSlider").value =
-                        value;
-
-                }
-
-                else if(key === "fee") {
-
-                    $("fee").value =
-                        value;
-
-                    $("feeSlider").value =
-                        value;
-
-                }
-
-                else {
-
-                    $(key).value =
-                        value;
-                }
+                $("volumeSlider").value =
+                    value;
 
             }
-        );
 
+            else if (key === "fee") {
 
-        /* reset trust inputs */
+                $("fee").value =
+                    value;
 
-        $("trustLearning").value = 70;
-        $("trustPractice").value = 60;
-        $("trustInteraction").value = 70;
-        $("trustConfidence").value = 60;
+                $("feeSlider").value =
+                    value;
 
-        /* reset acquisition mix */
+            }
 
-        $("mixOrganicSlider").value = 70;
-        $("mixReferralSlider").value = 15;
-        $("mixPaidSlider").value = 15;
+            else {
+
+                $(key).value =
+                    value;
+            }
+        });
 
         simulate();
     }
 );
-
-
-/* INITIALIZE */
 
 simulate();
 
